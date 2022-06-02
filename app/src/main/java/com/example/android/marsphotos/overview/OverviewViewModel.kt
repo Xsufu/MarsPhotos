@@ -52,9 +52,10 @@ class OverviewViewModel : ViewModel() {
      */
     private fun getMarsPhotos() {
         viewModelScope.launch {
+            _status.value = MarsApiStatus.LOADING
             try {
                 _photos.value = MarsApi.retrofitService.getPhotos()
-                _status.value = "Success: Mars photos properties retrieved"
+                _status.value = MarsApiStatus.DONE
             } catch (e: Exception) {
                 _status.value = "Failure ${e.message}"
             }

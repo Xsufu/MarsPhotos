@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsphotos.databinding.GridViewItemBinding
 
-
-
 class  PhotoGridAdapter : ListAdapter<MarsPhoto, PhotoGridAdapter.MarsPhotoViewHolder>(DiffCallback) {
     class MarsPhotoViewHolder(private var binding: GridViewItemBinding):
         RecyclerView.ViewHolder(binding.root) {

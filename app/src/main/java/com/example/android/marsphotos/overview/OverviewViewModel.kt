@@ -56,8 +56,8 @@ class OverviewViewModel : ViewModel() {
             try {
                 _photos.value = MarsApi.retrofitService.getPhotos()
                 _status.value = MarsApiStatus.DONE
-            } catch (e: Exception) {
-                _status.value = "Failure ${e.message}"
+            } catch (e: Exception) { _status.value = MarsApiStatus.ERROR
+                _photos.value = listOf()
             }
         }
     }
